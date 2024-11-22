@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 **Note**: I have updated the build.py in this starter to work from this directory. If you move the starter code, you may need to change your build.py
 
 # Starter Project - Brick
@@ -18,3 +19,10 @@ Completing this portion is worth 95% of the assignment.
 
 - Q: Why is the brick half blue and half brick
   - I am demonstrating how to load and display part of a texture. I had to start you with something :) Change this as you need! Observe in the fragment shader why this is.
+=======
+<<<<<<< HEAD
+# ParticleSystem
+=======
+
+# ParticleSystem
+>>>>>>> 20df6ea (Initial commit)
