@@ -50,6 +50,11 @@ private:
 
   Shader m_shader;
   VertexBufferLayout m_vertexBufferLayout;
+
+  std::vector<float> m_vertices;
+  std::vector<unsigned int> m_indices;
+  glm::mat4 m_projectionMatrix;
+
 };
 
 #endif
