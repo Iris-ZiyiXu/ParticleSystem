@@ -8,7 +8,11 @@
 #endif
 
 #include "Shader.hpp"
+#include <glm/gtc/type_ptr.hpp>
 #include "VertexBufferLayout.hpp"
+
+#include <glm/glm.hpp>
+#include <vector>
 
 struct ParticleProps
 {
@@ -19,7 +23,7 @@ struct ParticleProps
   float LifeTime = 1.0f;
 };
 
-class ParticleSystem()
+class ParticleSystem
 {
 public:
   ParticleSystem();
@@ -30,6 +34,17 @@ public:
   void Emit(const ParticleProps &particleProps);
 
 private:
+  struct Particle
+  {
+    glm::vec2 Position;
+    glm::vec2 Velocity;
+    glm::vec4 ColorBegin, ColorEnd;
+    float SizeBegin, SizeEnd;
+    float LifeTime = 1.0f;
+    float LifeRemaining = 0.0f;
+
+    bool active = false;
+  };
   std::vector<Particle> m_ParticlePool;
   uint32_t m_PoolIndex = 999;
 
