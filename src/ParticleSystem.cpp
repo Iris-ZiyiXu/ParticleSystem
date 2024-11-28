@@ -10,3 +10,8 @@
 #include <glm/gtc/constants.hpp>
 #include <glm/gtx/compatibility.hpp>
 #define GLM_ENABLE_EXPERIMENTAL
+
+ParticleSystem::ParticleSystem()
+{
+  m_ParticlePool.resize(1000);
+}
