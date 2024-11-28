@@ -8,11 +8,18 @@
 #endif
 
 #include "Shader.hpp"
+#include "Transform.hpp"
 #include <glm/gtc/type_ptr.hpp>
 #include "VertexBufferLayout.hpp"
 
 #include <glm/glm.hpp>
 #include <vector>
+
+enum class ParticleShape
+{
+  TRIANGLE;
+  SQUARE
+};
 
 struct ParticleProps
 {
@@ -21,6 +28,8 @@ struct ParticleProps
   glm::vec4 ColorBegin, ColorEnd;
   float SizeBegin, SizeEnd, SizeVariation;
   float LifeTime = 1.0f;
+
+  ParticleShape shape;
 };
 
 class ParticleSystem
@@ -40,16 +49,21 @@ private:
     glm::vec2 Velocity;
     glm::vec4 ColorBegin, ColorEnd;
     float SizeBegin, SizeEnd;
+    float rotation = 0.0f;
     float LifeTime = 1.0f;
     float LifeRemaining = 0.0f;
 
-    bool active = false;
+    bool active;
+
+    ParticleShape shape;
   };
+
   std::vector<Particle> m_ParticlePool;
   uint32_t m_PoolIndex = 999;
 
   Shader m_shader;
   VertexBufferLayout m_vertexBufferLayout;
+  Transform m_transform;
 
   std::vector<float> m_vertices;
   std::vector<unsigned int> m_indices;
