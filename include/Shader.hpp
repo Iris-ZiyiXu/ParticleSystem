@@ -29,7 +29,8 @@ public:
     GLuint GetID() const;
     // Set our uniforms for our shader.
     void SetUniformMatrix4fv(const GLchar* name, const GLfloat* value);
-	void SetUniform3f(const GLchar* name, float v0, float v1, float v2);
+	  void SetUniform3f(const GLchar* name, float v0, float v1, float v2);
+    void SetUniform4f(const GLchar* name, float v0, float v1, float v2, float v3);
     void SetUniform1i(const GLchar* name, int value);
     void SetUniform1f(const GLchar* name, float value);
 
