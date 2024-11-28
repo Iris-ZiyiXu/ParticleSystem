@@ -7,6 +7,9 @@
     #include <SDL.h>
 #endif
 
+#include "Shader.hpp"
+#include "VertexBufferLayout.hpp"
+
 struct ParticleProps
 {
   glm::vec2 Position;
@@ -29,6 +32,9 @@ public:
 private:
   std::vector<Particle> m_ParticlePool;
   uint32_t m_PoolIndex = 999;
+
+  Shader m_shader;
+  VertexBufferLayout m_vertexBufferLayout;
 };
 
 #endif
