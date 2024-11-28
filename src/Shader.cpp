@@ -166,6 +166,12 @@ void Shader::SetUniform3f(const GLchar* name, float v0, float v1, float v2){
     glUniform3f(location, v0, v1, v2);
 }
 
+// Set our uniforms for our shader (Useful for a vec4).
+void Shader::SetUniform4f(const GLchar* name, float v0, float v1, float v2, float v3){
+    GLint location = glGetUniformLocation(m_shaderID,name);
+    glUniform4f(location, v0, v1, v2, v3);
+}
+
 // Sets 1 int value in our uniform (That is why the suffix is 1i).
 void Shader::SetUniform1i(const GLchar* name, int value){
     GLint location = glGetUniformLocation(m_shaderID,name);
